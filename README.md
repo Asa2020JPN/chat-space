@@ -15,7 +15,7 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, unique: true|
+|name|string|null: false, unique: true|
 
 
 ### Association
@@ -37,8 +37,8 @@
 ## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|Body|text|null: false|
-|image|string|null: false|
+|ｂody|text|null: false|
+|image|string|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
