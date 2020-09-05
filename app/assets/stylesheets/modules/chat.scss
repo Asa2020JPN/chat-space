@@ -1,5 +1,10 @@
+.wrapper{
+  height: 100vh;
+  display:flex;
+}
 .chat {
-  width: calc(100% - 300px);
+  width: calc(100vw - 300px);
+  height: 100vh;
   .header {
     box-sizing: border-box;
     height: 100px;
@@ -34,11 +39,11 @@
   }
 
   .messages {
+    overflow: scroll;
     background-color: #FAFAFA;
     box-sizing: border-box;
     padding: 46px 40px 0;
     height: calc(100vh - 100px - 90px);
-    overflow: scroll;
     .message {
       .upper-message {
         display: flex;
@@ -64,31 +69,41 @@
     }
   }
 
-  .form {
+  .footer {
     background-color: #DDDDDD;
     box-sizing: border-box;
     height: 90px;
     padding: 20px 50px 20px 40px;
-    &__message {
-      border: none;
-      float: left;
-      height: 50px;
-      width: calc(100% - 150px);
+    form{
+      display: flex;
     }
-    &__mask {
-      background-color: $white;
+    .input-box{
+      width: 100%;
+      position: relative;
+    }
+    &__input-box__text{
+      font-size: 100%;
+      border: none;
+      height: 50px;
+      width: 100%;
+      padding: 0 45px 0 15px;
+    }
+
+    &__mask__image {
+      position: absolute;
+      right: 10px;
+      top: 12.5px;
       float: left;
       height: 50px;
       padding-right: 10px;
-      &__image {
-        font-size: 20px;
-        line-height: 50px;
+      font-size: 25px;
+      line-height: 50px;
       }
-      .hidden {
+      .type__file {
         display: none;
       }
     }
-    &__submit {
+    .form__submit {
       background-color: $light_blue;
       border: none;
       color: $white;
@@ -98,3 +113,4 @@
       margin-left: 15px;
       padding: 0 30px;
     }
+  }

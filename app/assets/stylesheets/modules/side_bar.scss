@@ -1,9 +1,10 @@
 .side-bar {
   box-sizing: border-box;
+  height: 100vh;
   color: $white;
   width: 300px;
   .header {
-    background-color: $side_blue_dark;
+    background-color: $side_blue_light;
     height: 100px;
     line-height: 100px;
     padding: 0 20px;
@@ -42,3 +43,5 @@
         margin-top: 5px;
       }
     }
+  }
+}
