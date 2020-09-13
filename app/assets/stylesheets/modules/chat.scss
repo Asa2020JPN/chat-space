@@ -35,6 +35,11 @@
       line-height: 40px;
       margin-top: 28px;
       padding: 0 20px;
+      &__bottan{
+        text-decoration: none;
+        color: $light_blue;
+      }
+
     }
   }
 
@@ -74,43 +79,77 @@
     box-sizing: border-box;
     height: 90px;
     padding: 20px 50px 20px 40px;
-    form{
-      display: flex;
-    }
-    .input-box{
-      width: 100%;
-      position: relative;
-    }
-    &__input-box__text{
-      font-size: 100%;
-      border: none;
-      height: 50px;
-      width: 100%;
-      padding: 0 45px 0 15px;
-    }
+      .input-box{
+        width: 100%;
+        justify-content: space-between;
+        // position: relative;
+        display: flex;
+        &__box {
+          font-size: 100%;
+          border: none;
+          height: 50px;
+          width: 100%;
+          padding: 0 45px 0 15px;
+        }
+      }
+        .mask_image {
+          // position: absolute;
+          position: relative;
+          width: 100%;
+          background-color: #fff;
+          // right: 120px;
+          // top: 12.5px;
+          // float: left;
+          // height: 50px;
+          // padding-right: 10px;
+          // font-size: 25px;
+          // line-height: 50px;
+          
+          &__label {
+           height: 50px;
+           position: absolute;
+           right: 10px;
 
-    &__mask__image {
-      position: absolute;
-      right: 10px;
-      top: 12.5px;
-      float: left;
-      height: 50px;
-      padding-right: 10px;
-      font-size: 25px;
-      line-height: 50px;
-      }
-      .type__file {
-        display: none;
-      }
-    }
-    .form__submit {
-      background-color: $light_blue;
-      border: none;
-      color: $white;
-      float: right;
-      font-size: 16px;
-      height: 50px;
-      margin-left: 15px;
-      padding: 0 30px;
-    }
+            .icon {
+              line-height: 50px;
+              font-size: 25px;
+            }
+            .hidden{
+              display: none
+            }
+          }
+        }
+        .form__submit {
+          background-color: $light_blue;
+          border: none;
+          color: $white;
+          float: right;
+          font-size: 16px;
+          height: 50px;
+          margin-left: 15px;
+          padding: 0 30px; 
+        }
   }
+}
+
+      // &__input-box__text{
+       
+      // }
+
+      // &__mask__image {
+      //   }
+      //   .type__file {
+      //     display: none;
+      //   }
+      // }
+      // .form__submit {
+      //   background-color: $light_blue;
+      //   border: none;
+      //   color: $white;
+      //   float: right;
+      //   font-size: 16px;
+      //   height: 50px;
+      //   margin-left: 15px;
+      //   padding: 0 30px;
+      // }
+
