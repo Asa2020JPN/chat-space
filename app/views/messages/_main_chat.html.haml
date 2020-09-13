@@ -2,51 +2,33 @@
   .header
     .left-header
       .left-header__title
-        グループ名
+        = @group.name
       %ul.left-header__members
-        Member：
-        %li.member
-          メンバー名
-        %li.member
-          メンバー名
-        %li.member
-          メンバー名
+        Members:&nbsp
+        - @group.users.each do |user|
+          .member
+            = user.name
     .right-header
-      .right-header__button
+      = link_to edit_group_path(@group),class:'right-header__bottan' do
         Edit
   .messages
-    .message
-      .upper-message
-        .upper-message__user-name
-          メンバー
-        .upper-message__date
-          2017/04/04
-      .lower-meesage
-        .lower-message__content
-          メッセージ
-    .message
-      .upper-message
-        .upper-message__user-name
-          メンバー
-        .upper-message__date
-          2017/04/04
-      .lower-meesage
-        .lower-message__content
-          メッセージ
-    .message
-      .upper-message
-        .upper-message__user-name
-          メンバー
-        .upper-message__date
-          2017/04/04
-      .lower-meesage
-        .lower-message__content
-          メッセージ
+    = render partial: 'message', collection: @messages
+
+
   .footer
-    %form
-      .input-box
-        %input{type: "text", class: "footer__input-box__text", placeholder: "type a message"}
-        %label.footer__mask__image
-          = icon('fa','image',class: 'icon')
-          %input{type: 'file', class:"type__file"}
-      %input.form__submit{type: 'submit', value: 'Send'}
+    = form_for [@group, @message], html: {class: 'input-box'} do |f|
+      .mask_image
+        = f.text_field :content, class: 'input-box__box', placeholder: 'type a message' 
+        = f.label :image, class: 'mask_image__label' do
+          = icon('fa fa-image', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
+        
+  -# .footer (chat-main__messageForm)
+  -#   %form  もともと▶chat-main__messageForm__inputSpace
+  -#     .input-box
+  -#       %input{type: "text", class: "footer__input-box__text", placeholder: "type a message"}
+  -#       %label.footer__mask__image
+  -#         = icon('fa','image',class: 'icon')
+  -#         %input{type: 'file', class:"type__file"}
+  -#     %input.form__submit{type: 'submit', value: 'Send'}
