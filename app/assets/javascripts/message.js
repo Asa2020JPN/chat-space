@@ -44,8 +44,6 @@ $(function(){
     e.preventDefault();
     let formData = new FormData(this);
     let url = $(this).attr('action');
-    console.log(new FormData(this))
-    console.log(url)
     $.ajax({
       url: url,
       type: "POST",
@@ -55,7 +53,6 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log(data)
       let html = buildHTML(data);
       $('.messages').append(html);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});      
